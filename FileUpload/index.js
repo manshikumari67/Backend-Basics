@@ -9,7 +9,10 @@ const PORT=process.env.PORT || 3000;
 // middleWare use krna h 
 app.use(express.json());
 const fileUpload=require("express-fileupload");
-app.use(fileUpload());
+app.use(fileUpload({
+    useTempFiles: true,
+    tempFileDir: '/tmp/'
+}));
 
 
 // db se connect krna h 
